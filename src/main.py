@@ -16,10 +16,10 @@ def LMS_algoritmo(entradas, target):
     LMS_erro = []
     LMS_ciclos = []
 
-    erro_minimo = 0.37235741682805046
+    erro_minimo = 0.04
     ciclos = 0
-    ciclos_maximo = 10000
-    taxa_aprendizagem = 0.0001 #random.uniform(0.0, 1.0) [MIN: 0.0001, MAX: 0.03]
+    ciclos_maximo = 1000
+    taxa_aprendizagem = 0.01 #random.uniform(0.0, 1.0) [MIN: 0.001, MAX: 0.03]
     w = [random.uniform(-0.5, 0.5) for _ in range(len(entradas[0]))]
     b = random.uniform(-0.5, 0.5)
     # taxa_aprendizagem = 0.05
