@@ -7,15 +7,37 @@
 
 ## História do ADALINE 📚
 
-O ADALINE, abreviação para *Adaptive Linear Neuron*, foi introduzido por Bernard Widrow e Ted Hoff em 1960 na Universidade de Stanford. O ADALINE é considerado um dos primeiros modelos de rede neural artificial e foi uma contribuição significativa para o campo emergente da inteligência artificial naquela época. Ele é um precursor do perceptron, outro tipo de modelo de rede neural.
+O ADALINE, abreviação para *Adaptive Linear Neuron*, foi desenvolvido por Bernard Widrow e Ted Hoff na Universidade de Stanford em 1960. Este modelo foi uma das primeiras tentativas de construir uma rede neural artificial.
+
+### Contexto Histórico
+
+- **Década de 1960**: Neste período, os cientistas estavam começando a explorar os conceitos de redes neurais e aprendizado de máquina. O ADALINE foi uma resposta a esse interesse crescente, sendo desenvolvido como uma extensão do conceito de neurônio artificial, proposto pelo neurofisiologista Warren McCulloch e pelo matemático Walter Pitts em 1943.
+
+## Funcionamento do ADALINE
+
+O ADALINE opera de maneira semelhante ao Perceptron, outro modelo de neurônio artificial. Aqui está uma descrição básica de como o ADALINE funciona:
+
+1. **Entradas e Pesos**: O ADALINE recebe um conjunto de entradas, cada uma multiplicada por um peso associado. Estas entradas e pesos formam um vetor de entrada.
+
+2. **Soma Ponderada**: O ADALINE calcula a soma ponderada das entradas e pesos.
+
+3. **Função de Ativação Linear**: Ao contrário do Perceptron, o ADALINE utiliza uma função de ativação linear. Esta função é usada para ajustar a saída do neurônio de acordo com a soma ponderada das entradas e pesos.
+
+4. **Ajuste de Pesos**: Durante o treinamento, os pesos são ajustados para minimizar uma função de custo. Isso geralmente é feito usando algoritmos de otimização, como o Gradiente Descendente.
+
+5. **Saída**: A saída do ADALINE é uma combinação linear das entradas e pesos, passada através da função de ativação linear.
+
+### Diferença entre ADALINE e Perceptron
+
+A principal diferença entre o ADALINE e o Perceptron está na função de ativação utilizada. Enquanto o Perceptron utiliza uma função de ativação degrau, o ADALINE utiliza uma função de ativação linear. Isso significa que o ADALINE pode produzir saídas contínuas em vez de saídas binárias.
+
+### Aplicações do ADALINE
+
+O ADALINE foi inicialmente aplicado em problemas de reconhecimento de padrões e controle adaptativo. Com o tempo, suas aplicações foram estendidas para uma variedade de áreas, incluindo processamento de sinais, comunicações e sistemas de controle.
 
 ## Sobre o Projeto 🤖
 
 O projeto ADALINE consiste na implementação e teste de uma rede neural ADALINE utilizando a linguagem Python. A rede é treinada e testada em cima de uma base de dados fornecida em formato Excel (.xlsx). O programa gera gráficos que mostram a distribuição dos dados de entrada, o comportamento do erro quadrático conforme os ciclos de treinamento aumentam e a fronteira de separação obtida pelo ADALINE.
-
-## Funcionamento do ADALINE 🧠
-
-O ADALINE é uma rede neural de única camada composta por um único neurônio, que opera de maneira semelhante a um modelo de regressão linear. Ele recebe entradas, multiplica-as por pesos associados e soma-as. Esta soma é então processada por uma função de ativação linear, que produz a saída da rede.
 
 ### Algoritmo de Treinamento LMS (Least Mean Squares)
 
