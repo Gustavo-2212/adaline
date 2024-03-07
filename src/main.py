@@ -2,6 +2,7 @@ import random
 from math import e
 from bokeh.plotting import figure, show, output_file
 from bokeh.layouts import gridplot
+import numpy as np
 
 
 def sigmoide(x):
@@ -17,7 +18,7 @@ def MLP(x, y):
     neuronios_internos = 4
     neuronios_saida = 1
     
-    erro_minimo = .0002 # .002 .0005 .0003
+    erro_minimo = .0005 # .002 .0005 .0003
     ciclos, num_ciclos = 0, 500000
     taxa_aprendizagem = .03
     
@@ -110,28 +111,25 @@ def MLP(x, y):
 
 
 def testa(x, y, pesos_internos, pesos_saida):
-    EixoY = []
-    amostras = len(x)
     neuronios_internos = len(pesos_internos[0])
     
     print("-" * 115)
     print("Testando a Rede Neural MLP (Função Sigmóide Bipolar)\n")
     print(f"\t[+] W: {pesos_saida[0]}\n\t[+] B: {pesos_saida[1]}\n\t[+] W Internos: {pesos_internos[0]}\n\t[+] B Internos: {pesos_internos[1]}\n\n")
     print("-" * 115)
-    print("Comparação dos resultados\n")
     
-    for i in range(amostras):
-        Zin = [x[i] * pesos_internos[0][j] + pesos_internos[1][j] for j in range(neuronios_internos)]
+    amostras = np.linspace(0,1,100)
+    Y_amostras = []
+    for i in amostras:
+        Zin = [i * pesos_internos[0][j] + pesos_internos[1][j] for j in range(neuronios_internos)]
         Z = [sigmoide(Zin[j]) for j in range(neuronios_internos)]
         
         Yin = pesos_saida[1]
         Yin += sum(Z[j] * pesos_saida[0][j] for j in range(neuronios_internos))
         Y = sigmoide(Yin)
+        Y_amostras.append(Y)
 
-        print(f"\t[+] Y({i+1}): {y[i]:.4f}\tYmlp({i+1}): {Y}\n")
-        EixoY.append(Y)
-    
-    return (x, EixoY)
+    return (amostras, Y_amostras)
 
 
 def gerar_graficos(LMS, FUNCAO, PONTOS):
